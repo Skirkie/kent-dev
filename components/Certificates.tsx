@@ -18,7 +18,7 @@ const Certificates = () => {
       description: "Completed Day 1 of the Advanced Seminar Series with the topic \"Journey from Science Practitioner to Information Technology Specialist\", held via Microsoft Teams (Virtual Session).",
       skills: ["IT Career Development", "Professional Growth"],
       credentialUrl: "#",
-      image: "/img/day1.png",
+      image: "/img/Day1.png",
     },
     {
       title: "Advanced Seminar Series — Day 2",
@@ -27,7 +27,7 @@ const Certificates = () => {
       description: "Completed Day 2 of the Advanced Seminar Series with the topic \"The Power of Color in Graphic Design: Theory, Psychology, and Practice\", held at Davao del Norte State College Gymnasium.",
       skills: ["Graphic Design", "Color Theory", "Design Psychology"],
       credentialUrl: "#",
-      image: "/img/day2.png",
+      image: "/img/Day2.png",
     },
   ];
 
