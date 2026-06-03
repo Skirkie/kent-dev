@@ -8,9 +8,9 @@ const Education = () => {
   const educationData = [
     {
       degree: "Bachelor of Science in Information Technology",
-      institution: "University Name",
+      institution: "Davao del Norte State College",
       location: "Philippines",
-      period: "2021 - Present",
+      period: "2022 - Present",
       status: "4th Year Student",
       description:
         "Pursuing a comprehensive education in information technology, focusing on software development, web technologies, database management, and system analysis.",

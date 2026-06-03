@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Mail } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -31,13 +32,25 @@ const Hero = () => {
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight"
-            >
-              Hi, I'm <span className="text-neutral-600 dark:text-neutral-400">Kent</span>
-            </motion.h1>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 0.2 }}
+  className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight flex flex-wrap items-center gap-x-3"
+>
+  Hi, I'm
+  {/* THE FIX: Changed to a single destination and added repeatType: "reverse" */}
+  <motion.span
+    animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
+    transition={{
+      duration: 5,
+      repeat: Infinity,
+      ease: "linear",
+    }}
+    className="inline-block bg-[length:200%_auto] bg-clip-text text-transparent bg-gradient-to-r from-neutral-900 via-neutral-400 to-neutral-900 dark:from-neutral-100 dark:via-neutral-500 dark:to-neutral-100 pb-1"
+  >
+    Kent
+  </motion.span>
+</motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -76,12 +89,6 @@ const Hero = () => {
                   Contact Me
                 </Button>
               </a>
-              <a href="#" download>
-                <Button size="lg" variant="outline">
-                  <Download className="mr-2 h-4 w-4" />
-                  Resume
-                </Button>
-              </a>
             </motion.div>
           </motion.div>
 
@@ -92,17 +99,16 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="relative hidden lg:block"
           >
-            <div className="relative w-full aspect-square max-w-lg mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900 rounded-3xl" />
-              <div className="absolute inset-4 bg-white dark:bg-neutral-950 rounded-2xl border border-neutral-200 dark:border-neutral-800 flex items-center justify-center">
-                <div className="text-center space-y-4 p-8">
-                  <div className="text-6xl font-bold text-neutral-300 dark:text-neutral-700">
-                    &lt;/&gt;
-                  </div>
-                  <p className="text-sm text-neutral-500 dark:text-neutral-500 font-mono">
-                    Building the future, one line at a time
-                  </p>
-                </div>
+            <div className="relative w-full aspect-square max-w-sm mx-auto">
+              <div className="absolute inset-0 bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-900 rounded-full" />
+              <div className="absolute inset-4 rounded-full overflow-hidden border border-neutral-200 dark:border-neutral-800">
+                <Image
+                  src="/img/papoi.jpg"
+                  alt="Kent"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
               </div>
             </div>
           </motion.div>
